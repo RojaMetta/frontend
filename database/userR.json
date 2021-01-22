@@ -1,0 +1,28 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "roja",
+        "email": "roja@gmail.com",
+        "password": "rooojjjjaaa",
+        "address": "surya vihar apartment",
+        "mobileNo": 3456789
+      },
+      {
+        "id": 2,
+        "name": "roza",
+        "email": "roza@gmail.com",
+        "password": "rooozzzaaa",
+        "address": "surya vihar apartment",
+        "mobileNo": 9456789
+      },
+      {
+        "name": "himam",
+        "email": "hima@gmail.com",
+        "password": "hiimaaa",
+        "address": "P3\nSurya vihar apartment,Sana street",
+        "mobileNo": "8332950157",
+        "id": 3
+      }
+    ]
+  }

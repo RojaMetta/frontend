@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Register</h4></div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+
+                        <div class="form-group">
+                            <label for="name" class="cols-sm-2 control-label">Name:</label>
+                            <input type="text" [(ngModel)]="user.name" class="form-control" placeholder="Enter name"
+                                name="name" id="name" #name="ngModel" required minlength="5" pattern="^[a-zA-Z]+$">
+                            <div *ngIf="name.touched && name.errors">
+                                <div class="alert alert-danger" *ngIf="name.errors.required">
+                                    Name is required!!!!!
+                                </div>
+                                <div class="alert alert-danger" *ngIf="name.errors.minlength">
+                                    Minimum length for the name should be 5
+                                </div>
+                                <div class="alert alert-danger" *ngIf="name.errors.pattern">
+                                    The characters should be alphabetic!!!
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group" class="cols-sm-2 control-label">
+                            <label for="email">Email:</label>
+                            <input [(ngModel)]="user.email" type="text" class="form-control" placeholder="Enter email"
+                                id="email" name="email" #email="ngModel" required email>
+                            <div *ngIf="email.touched && !email.valid">
+                                <div class="alert alert-danger" *ngIf="email.errors.required; else emailcheck">
+                                    Email is required!!!!
+                                </div>
+                                <ng-template #emailcheck>
+                                    <div class="alert alert-danger" *ngIf="!email.valid">
+                                        Email is invalid!!!!!!
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+
+                        <div class="form-group" class="cols-sm-2 control-label">
+                            <label for="password">Password</label>
+                            <input [(ngModel)]="user.password" type="text" class="form-control"
+                                placeholder="Enter password" id="password" name="password" #password="ngModel" required
+                                password>
+                            <div *ngIf="password.touched && !password.valid">
+                                <div *ngIf="password.errors.required">Password is required</div>
+                                <div class="alert alert-danger" *ngIf="password.errors.minlength">Password must be at
+                                    least 5 characters
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" class="cols-sm-2 control-label">
+                            <label for="address">Address:</label>
+                            <textarea [(ngModel)]="user.address" class="form-control" rows="3" id="address"
+                                placeholder="Enter your Address" name="address" #address="ngModel" required
+                                address></textarea>
+                            <div *ngIf="address.touched && !address.valid">
+                                <div *ngIf="address.errors.required">Address is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" class="cols-sm-2 control-label">
+                            <label for="mobileNo">Mobile No</label>
+                            <input [(ngModel)]="user.mobileNo" type="text" class="form-control"
+                                placeholder="Enter your Mobile No" id="mobileNo" name="mobileNo" #mobileNo="ngModel"
+                                required mobileNo />
+                            <div *ngIf="mobileNo.touched && !mobileNo.valid">
+                                <div *ngIf="mobileNo.errors.required">MobileNo is required</div>
+                                <div class="alert alert-danger" *ngIf="mobileNo.errors.pattern">
+                                    The mobileNo should be numeric!!!
+                                </div>
+                            </div>
+                        </div>
+
+                        <button [disabled]="!registerForm.form.valid" type="submit"
+                            class="btn btn-primary">Register</button>
+                    </form>
+
+                    <div class="alert alert-success">
+                        <strong>{{successmsg}}</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
