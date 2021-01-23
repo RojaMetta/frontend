@@ -20,9 +20,6 @@ newList : Array<any>;
        if(response)
        {
          this.newList=response['articles'];
-         console.log(this.newList[0].source.id);
-         console.log(this.newList[0].author);
-         console.log(this.newList[0].source); // json format
        }
      },error=>{})
   }

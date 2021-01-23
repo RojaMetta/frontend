@@ -1,1 +1,9 @@
 
+.box{
+    padding: 10px 10px;
+    background-color: rgb(236, 226, 226);
+}
+.box h5{
+    font-size: 16px;
+    font-weight: bold;
+}

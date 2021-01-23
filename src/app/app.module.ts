@@ -9,20 +9,63 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+//import { BusinessComponent } from './categories/';
+import { HealthComponent } from './categories/health/health.component';
+import { EntertainmentComponent } from './categories/entertainment/entertainment.component';
+import { ScienceComponent } from './categories/science/science.component';
+import { SportsComponent } from './categories/sports/sports.component';
+import { TechnologyComponent } from './categories/technology/technology.component';
+import { FooterComponent } from './footer/footer.component';
+import { BusinessComponent } from './categories/business/business.component';
+import { GeneralComponent } from './categories/general/general.component';
+
 
 const approutes : Routes= [
   {
     path : '' , 
+    component : HomeComponent
+  },
+  {
+    path : 'dashboard',
+    component : DashboardComponent
+},
+{
+  path : 'business' , 
+  component : BusinessComponent
+},
+{
+  path : 'entertainment' , 
+  component : EntertainmentComponent
+},
+{
+  path : 'general',
+  component : GeneralComponent
+},
+{
+  path : 'health' , 
+  component : HealthComponent
+},
+{
+  path : 'science' , 
+  component : ScienceComponent
+},
+{
+  path : 'sports' , 
+  component : SportsComponent
+},
+{
+  path : 'technology' , 
+  component : TechnologyComponent
+},
+
+  {
+    path : 'login' , 
     component : LoginComponent
   }, 
   {
    path : 'register' , 
    component : RegisterComponent
-},
- 
-{
-     path : 'dashboard',
-     component : DashboardComponent
 } 
     ]
 @NgModule({
@@ -30,7 +73,18 @@ const approutes : Routes= [
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    //BusinessComponent,
+    HealthComponent,
+    EntertainmentComponent,
+    ScienceComponent,
+    SportsComponent,
+    TechnologyComponent,
+    FooterComponent,
+    BusinessComponent,
+    GeneralComponent,
+
   ],
   imports: [
     BrowserModule,
